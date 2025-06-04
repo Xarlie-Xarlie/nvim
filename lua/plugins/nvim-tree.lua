@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer" })
-
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
