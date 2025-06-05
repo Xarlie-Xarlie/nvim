@@ -22,6 +22,23 @@ return {
       { "<leader>e",  "<cmd>NvimTreeToggle<cr>",                                          desc = "File Explorer" },
       { "<leader>w",  "<cmd>:w<cr>",                                                      desc = "Save" },
       { "<leader>h",  "<cmd>noh<cr>",                                                     desc = "Clear search highlights" },
+      -- Move line/block up/down (VSCode style)
+      { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                              desc = "Move line down" },
+      { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                              desc = "Move line up" },
+      -- Window navigation
+      { "<C-h>",      "<C-w>h",                                                           desc = "Window left" },
+      { "<C-j>",      "<C-w>j",                                                           desc = "Window down" },
+      { "<C-k>",      "<C-w>k",                                                           desc = "Window up" },
+      { "<C-l>",      "<C-w>l",                                                           desc = "Window right" },
+      -- Window resize
+      { "<C-Up>",     ":resize -2<CR>",                                                   desc = "Resize window up" },
+      { "<C-Down>",   ":resize +2<CR>",                                                   desc = "Resize window down" },
+      { "<C-Left>",   ":vertical resize -2<CR>",                                          desc = "Resize window left" },
+      { "<C-Right>",  ":vertical resize +2<CR>",                                          desc = "Resize window right" },
+      -- QuickFix
+      { "]q",         "<cmd>cnext<cr>",                                                   desc = "Next QuickFix" },
+      { "[q",         "<cmd>cprev<cr>",                                                   desc = "Previous QuickFix" },
+      { "<C-q>",      "<cmd>lua QuickFixToggle()<cr>",                                    desc = "Toggle QuickFix" },
       -- Search
       { "<leader>s",  group = "Search" },
       { "<leader>sf", "<cmd>Telescope find_files<cr>",                                    desc = "Find files" },
@@ -32,7 +49,7 @@ return {
       { "<leader>sp", "<cmd>Telescope colorscheme<cr>",                                   desc = "Colorscheme", },
       { "<leader>sr", "<cmd>lua require('telescope').extensions.recent_files.pick()<CR>", desc = "Recent files", },
       { "<leader>sC", "<cmd>Telescope commands<cr>",                                      desc = "Commands", },
-      { "<leader>sT", "<cmd>lua CustomLiveGrep()<cr>",                                    desc = "Symbols", },
+      { "<leader>sT", "<cmd>lua CustomLiveGrep()<cr>",                                    desc = "Text Glob", },
       { "<leader>sb", "<cmd>Telescope buffers<cr>",                                       desc = "Buffers", },
       -- Plugins
       { "<leader>p",  group = "Plugins" },
