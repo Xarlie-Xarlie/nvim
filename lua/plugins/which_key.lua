@@ -29,6 +29,9 @@ return {
       { "<A-k>",      ":m .-2<CR>==",                                                     desc = "Move line up",           mode = "n" },
       { "<A-j>",      ":m '>+1<CR>gv=gv",                                                 desc = "Move block down",        mode = "x" },
       { "<A-k>",      ":m '<-2<CR>gv=gv",                                                 desc = "Move block up",          mode = "x" },
+      -- Better identing
+      { "<",          "<gv",                                                              desc = "Indent left",            mode = "v" },
+      { ">",          ">gv",                                                              desc = "Indent right",           mode = "v" },
       -- Window navigation
       { "<C-h>",      "<C-w>h",                                                           desc = "Window left" },
       { "<C-j>",      "<C-w>j",                                                           desc = "Window down" },
