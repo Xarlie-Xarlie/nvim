@@ -23,8 +23,12 @@ return {
       { "<leader>w",  "<cmd>:w<cr>",                                                      desc = "Save" },
       { "<leader>h",  "<cmd>noh<cr>",                                                     desc = "Clear search highlights" },
       -- Move line/block up/down (VSCode style)
-      { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                              desc = "Move line down" },
-      { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                              desc = "Move line up" },
+      { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                              desc = "Move line down",         mode = "i" },
+      { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                              desc = "Move line up",           mode = "i" },
+      { "<A-j>",      ":m .+1<CR>==",                                                     desc = "Move line down",         mode = "n" },
+      { "<A-k>",      ":m .-2<CR>==",                                                     desc = "Move line up",           mode = "n" },
+      { "<A-j>",      ":m '>+1<CR>gv=gv",                                                 desc = "Move block down",        mode = "x" },
+      { "<A-k>",      ":m '<-2<CR>gv=gv",                                                 desc = "Move block up",          mode = "x" },
       -- Window navigation
       { "<C-h>",      "<C-w>h",                                                           desc = "Window left" },
       { "<C-j>",      "<C-w>j",                                                           desc = "Window down" },
