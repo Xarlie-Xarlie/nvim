@@ -22,6 +22,9 @@ return {
       { "<leader>e",  "<cmd>NvimTreeToggle<cr>",                                          desc = "File Explorer" },
       { "<leader>w",  "<cmd>:w<cr>",                                                      desc = "Save" },
       { "<leader>h",  "<cmd>noh<cr>",                                                     desc = "Clear search highlights" },
+      { "<leader>c",  "<cmd>bdelete<cr>",                                                 desc = "Close Buffer" },
+      { "<S-l>",      ":BufferLineCycleNext<CR>" },
+      { "<S-h>",      ":BufferLineCyclePrev<CR>" },
       -- Move line/block up/down (VSCode style)
       { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                              desc = "Move line down",         mode = "i" },
       { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                              desc = "Move line up",           mode = "i" },
