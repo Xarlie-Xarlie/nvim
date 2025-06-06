@@ -22,7 +22,7 @@ return {
       { "<leader>e",  "<cmd>NvimTreeToggle<cr>",                                          desc = "File Explorer" },
       { "<leader>w",  "<cmd>:w<cr>",                                                      desc = "Save" },
       { "<leader>h",  "<cmd>noh<cr>",                                                     desc = "Clear search highlights" },
-      { "<leader>c",  "<cmd>bdelete<cr>",                                                 desc = "Close Buffer" },
+      { "<leader>c",  "<cmd>lua require('mini.bufremove').delete(0, false)<cr>",          desc = "Close Buffer" },
       { "<S-l>",      ":BufferLineCycleNext<CR>" },
       { "<S-h>",      ":BufferLineCyclePrev<CR>" },
       -- Move line/block up/down (VSCode style)
@@ -71,6 +71,12 @@ return {
       { "<leader>pp", "<cmd>Lazy profile<cr>",                                            desc = "Profile" },
       { "<leader>pl", "<cmd>Lazy log<cr>",                                                desc = "Log" },
       { "<leader>pd", "<cmd>Lazy debug<cr>",                                              desc = "Debug" },
+      -- Buffers
+      { "<leader>b",  group = "Buffers" },
+      { "<leader>bp", "<cmd>BufferLineTogglePin<cr>",                                     desc = "Toggle Pin" },
+      { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>",                                     desc = "Close Left Buffers" },
+      { "<leader>bl", "<cmd>BufferLineCloseRight<cr>",                                    desc = "Close Right Buffers" },
+      { "<leader>bR", "<cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseLeft<cr>",        desc = "Close All Other Buffers" },
     })
   end
 }
