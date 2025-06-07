@@ -25,6 +25,9 @@ return {
       { "<leader>c",  "<cmd>lua require('mini.bufremove').delete(0, false)<cr>",                  desc = "Close Buffer" },
       { "<S-l>",      ":BufferLineCycleNext<CR>" },
       { "<S-h>",      ":BufferLineCyclePrev<CR>" },
+      { "y",          "\"+y",                                                                     mode = { "n", "v" } },
+      { "p",          "\"+p",                                                                     mode = { "n", "v" } },
+      { "d",          "\"+d",                                                                     mode = { "n", "v" } },
       -- Move line/block up/down (VSCode style)
       { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                                      desc = "Move line down",               mode = "i" },
       { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                                      desc = "Move line up",                 mode = "i" },
@@ -97,6 +100,21 @@ return {
       { "<leader>gc", "<cmd>Telescope git_commits<cr>",                                           desc = "Checkout Commits" },
       { "<leader>gC", "<cmd>Telescope git_bcommits<cr>",                                          desc = "Checkout Commit(current file)" },
       { "<leader>go", "<cmd>Telescope git_status<cr>",                                            desc = "Open changed files" },
+      -- LSP
+      { "<leader>l",  group = "LSP" },
+      { "<leader>lw", "<cmd>Telescope diagnostics<cr>",                                           desc = "Diagnostics" },
+      { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>",                                  desc = "Next Diagnostic" },
+      { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>",                                  desc = "Prev Diagnostic" },
+      { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>",                                        desc = "Format" },
+      { "<leader>la", "<cmd>lua vim.lsp.buf.code_actions()<cr>",                                  desc = "Code Actions" },
+      { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>",                                      desc = "CodeLens Action" },
+      { "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>",                                 desc = "Quickfix" },
+      { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>",                                        desc = "Rename" },
+      { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",                                  desc = "Document Symbols" },
+      { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",                         desc = "Workspace Symbols" },
+      { "<leader>le", "<cmd>Telescope quickfix<cr>",                                              desc = "Telescope Quickfix" },
+      { "<leader>li", "<cmd>LspInfo<cr>",                                                         desc = "Info" },
+      { "<leader>lI", "<cmd>Mason<cr>",                                                           desc = "Mason Info" },
     })
   end
 }
