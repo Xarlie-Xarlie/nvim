@@ -5,7 +5,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     init = function()
       require("telescope").load_extension("ui-select")
-      -- require("telescope").load_extension("noice")
+      require("telescope").load_extension("noice")
       require("telescope").load_extension("recent_files")
       require("telescope").load_extension("projects")
     end,
