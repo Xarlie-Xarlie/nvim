@@ -7,6 +7,7 @@ return {
       require("telescope").load_extension("ui-select")
       -- require("telescope").load_extension("noice")
       require("telescope").load_extension("recent_files")
+      require("telescope").load_extension("projects")
     end,
     opts = {
       ["ui-select"] = {

@@ -26,15 +26,15 @@ return {
       { "<S-l>",      ":BufferLineCycleNext<CR>" },
       { "<S-h>",      ":BufferLineCyclePrev<CR>" },
       -- Move line/block up/down (VSCode style)
-      { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                                      desc = "Move line down",         mode = "i" },
-      { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                                      desc = "Move line up",           mode = "i" },
-      { "<A-j>",      ":m .+1<CR>==",                                                             desc = "Move line down",         mode = "n" },
-      { "<A-k>",      ":m .-2<CR>==",                                                             desc = "Move line up",           mode = "n" },
-      { "<A-j>",      ":m '>+1<CR>gv=gv",                                                         desc = "Move block down",        mode = "x" },
-      { "<A-k>",      ":m '<-2<CR>gv=gv",                                                         desc = "Move block up",          mode = "x" },
+      { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                                      desc = "Move line down",               mode = "i" },
+      { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                                      desc = "Move line up",                 mode = "i" },
+      { "<A-j>",      ":m .+1<CR>==",                                                             desc = "Move line down",               mode = "n" },
+      { "<A-k>",      ":m .-2<CR>==",                                                             desc = "Move line up",                 mode = "n" },
+      { "<A-j>",      ":m '>+1<CR>gv=gv",                                                         desc = "Move block down",              mode = "x" },
+      { "<A-k>",      ":m '<-2<CR>gv=gv",                                                         desc = "Move block up",                mode = "x" },
       -- Better identing
-      { "<",          "<gv",                                                                      desc = "Indent left",            mode = "v" },
-      { ">",          ">gv",                                                                      desc = "Indent right",           mode = "v" },
+      { "<",          "<gv",                                                                      desc = "Indent left",                  mode = "v" },
+      { ">",          ">gv",                                                                      desc = "Indent right",                 mode = "v" },
       -- Window navigation
       { "<C-h>",      "<C-w>h",                                                                   desc = "Window left" },
       { "<C-j>",      "<C-w>j",                                                                   desc = "Window down" },
@@ -78,9 +78,25 @@ return {
       { "<leader>bl", "<cmd>BufferLineCloseRight<cr>",                                            desc = "Close Right Buffers" },
       { "<leader>bR", "<cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseLeft<cr>",                desc = "Close All Other Buffers" },
       -- Comment
-      { "<leader>/",  function() require("Comment.api").toggle.linewise.current() end,            desc = "Toggle comment",         mode = { "n" } },
-      { "<leader>/",  function() require("Comment.api").toggle.linewise(vim.fn.visualmode()) end, desc = "Toggle comment",         mode = { "v" } },
-
+      { "<leader>/",  function() require("Comment.api").toggle.linewise.current() end,            desc = "Toggle comment",               mode = { "n" } },
+      { "<leader>/",  function() require("Comment.api").toggle.linewise(vim.fn.visualmode()) end, desc = "Toggle comment",               mode = { "v" } },
+      -- Git
+      { "<leader>g",  group = "Git" },
+      -- { "<leader>gg","lazygit", desc =  },
+      { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>",                                              desc = "Next Hunk" },
+      { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>",                                              desc = "Previous Hunk" },
+      { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>",                                             desc = "Stage Hunk" },
+      { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>",                                        desc = "Undo Stage Hunk" },
+      { "<leader>gl", "<cmd>Gitsigns blame_line<cr>",                                             desc = "Blame" },
+      { "<leader>gL", "<cmd>lua require 'gitsigns'.blame_line({full=true})<cr>",                  desc = "Blame Line (full)" },
+      { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>",                                           desc = "Preview Hunk" },
+      { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>",                                             desc = "Reset Hunk" },
+      { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>",                                           desc = "Reset Buffer" },
+      { "<leader>gb", "<cmd>Telescope git_branches<cr>",                                          desc = "Checkout Branches" },
+      { "<leader>gd", "<cmd>Gitsigns diffthis HEAD vertical=true<cr>",                            desc = "Git Diff" },
+      { "<leader>gc", "<cmd>Telescope git_commits<cr>",                                           desc = "Checkout Commits" },
+      { "<leader>gC", "<cmd>Telescope git_bcommits<cr>",                                          desc = "Checkout Commit(current file)" },
+      { "<leader>go", "<cmd>Telescope git_status<cr>",                                            desc = "Open changed files" },
     })
   end
 }
