@@ -18,8 +18,28 @@ return {
     'williamboman/mason-lspconfig.nvim',
   },
   init = function()
-    require('lspconfig').tsserver.setup({})
-    require('lspconfig').lua_ls.setup {}
-    -- require('lspconfig').elixirls.setup {}
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+      vim.lsp.handlers.signature_help, {
+        border = "rounded",
+        silent = true,
+        focusable = false,
+      }
+    )
+
+    vim.diagnostic.config({
+      float = {
+        border = "rounded",
+        source = true,
+        focusable = false,
+        style = "minimal",
+        header = "Diagnostics",
+      },
+    })
+
+    require('lspconfig').ts_ls.setup({ capabilities = capabilities })
+    require('lspconfig').lua_ls.setup({ capabilities = capabilities })
+    require('lspconfig').elixirls.setup({ capabilities = capabilities })
   end
 }
