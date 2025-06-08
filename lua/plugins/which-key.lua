@@ -115,6 +115,7 @@ return {
       { "<leader>le", "<cmd>Telescope quickfix<cr>",                                              desc = "Telescope Quickfix" },
       { "<leader>li", "<cmd>LspInfo<cr>",                                                         desc = "Info" },
       { "<leader>lI", "<cmd>Mason<cr>",                                                           desc = "Mason Info" },
+      { "<leader>ln", "<cmd>Navbuddy<cr>",                                                        desc = "Navbuddy" },
     })
   end
 }
