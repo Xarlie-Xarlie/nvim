@@ -85,7 +85,7 @@ return {
       { "<leader>/",  function() require("Comment.api").toggle.linewise(vim.fn.visualmode()) end, desc = "Toggle comment",               mode = { "v" } },
       -- Git
       { "<leader>g",  group = "Git" },
-      -- { "<leader>gg","lazygit", desc =  },
+      { "<leader>gg", "<cmd>lua CustomLazyGitToggle()<cr>",                                       desc = "Lazygit" },
       { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>",                                              desc = "Next Hunk" },
       { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>",                                              desc = "Previous Hunk" },
       { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>",                                             desc = "Stage Hunk" },

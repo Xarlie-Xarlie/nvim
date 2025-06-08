@@ -31,3 +31,23 @@ function CustomLiveGrep()
 
   require("telescope.builtin").live_grep({ glob_pattern = glob_pattern })
 end
+
+-- Custom LazyGit Toggle
+function CustomLazyGitToggle()
+  local Terminal = require('toggleterm.terminal').Terminal
+  local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
+    direction = "float",
+    float_opts = {
+      border = "none",
+      width = vim.o.columns,
+      height = vim.o.lines,
+    },
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+  })
+  lazygit:toggle()
+end
