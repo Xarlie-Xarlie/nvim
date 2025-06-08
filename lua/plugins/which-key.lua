@@ -116,6 +116,10 @@ return {
       { "<leader>li", "<cmd>LspInfo<cr>",                                                         desc = "Info" },
       { "<leader>lI", "<cmd>Mason<cr>",                                                           desc = "Mason Info" },
       { "<leader>ln", "<cmd>Navbuddy<cr>",                                                        desc = "Navbuddy" },
+      -- Terminal
+      { "<C-1>",      "<cmd>1ToggleTerm size=30 direction=horizontal<cr>",                        desc = "Horizontal Terminal" },
+      { "<C-2>",      "<cmd>2ToggleTerm size=120 direction=vertical<cr>",                         desc = "Vertical Terminal" },
+      { "<C-3>",      "<cmd>3ToggleTerm direction=float<cr>",                                     desc = "Float Terminal" },
     })
   end
 }
