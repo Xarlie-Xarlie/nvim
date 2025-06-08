@@ -9,3 +9,4 @@ vim.opt.termguicolors = true
 vim.o.statuscolumn = "%s %l %r"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.opt.splitright = true

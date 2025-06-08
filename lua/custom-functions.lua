@@ -51,3 +51,41 @@ function CustomLazyGitToggle()
   })
   lazygit:toggle()
 end
+
+-- Quick Chat with Copilot
+function CustomQuickChat()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, {
+      selection = require("CopilotChat.select").buffer
+    })
+  end
+end
+
+-- Custom Generate Pull Request
+function CustomGeneratePullRequest()
+  local commit_count = vim.fn.input("Number of commits to include: ")
+
+  local pull_request_prompt = [[
+Please generate a pull request description, in pt-br, based on the changes made in the code.
+Use the pull request template structure.
+Summarize the commits to create a comprehensive PR description.
+
+In the section '### Principais pontos a serem revisados', mark everygthing with an x.
+]]
+
+  if commit_count ~= "" then
+    require("CopilotChat").ask(pull_request_prompt,
+      {
+        context = {
+          string.format(
+            "system:`git log --stat --patch -n %s`",
+            commit_count
+          ),
+          "file:`.github/pull_request_template.md`" },
+      }
+    )
+  else
+    print("Number of commits are required.")
+  end
+end
