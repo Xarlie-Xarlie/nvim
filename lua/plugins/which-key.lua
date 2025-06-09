@@ -20,7 +20,7 @@ return {
       -- General
       { "<leader>;",  "<cmd>Alpha<CR>",                                                           desc = "Dashboard" },
       { "<leader>q",  "<cmd>q<cr>",                                                               desc = "Exit" },
-      { "<leader>e",  "<cmd>NvimTreeToggle<cr>",                                                  desc = "File Explorer" },
+      { "<leader>e",  "<cmd>NvimTreeFindFileToggle<cr>",                                          desc = "File Explorer" },
       { "<leader>w",  "<cmd>:w<cr>",                                                              desc = "Save" },
       { "<leader>h",  "<cmd>noh<cr>",                                                             desc = "Clear search highlights" },
       { "<leader>c",  "<cmd>lua require('mini.bufremove').delete(0, false)<cr>",                  desc = "Close Buffer" },
