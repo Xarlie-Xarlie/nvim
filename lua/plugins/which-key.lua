@@ -18,6 +18,7 @@ return {
   init = function()
     require("which-key").add({
       -- General
+      { "<leader>;",  "<cmd>Alpha<CR>",                                                           desc = "Dashboard" },
       { "<leader>q",  "<cmd>q<cr>",                                                               desc = "Exit" },
       { "<leader>e",  "<cmd>NvimTreeToggle<cr>",                                                  desc = "File Explorer" },
       { "<leader>w",  "<cmd>:w<cr>",                                                              desc = "Save" },
