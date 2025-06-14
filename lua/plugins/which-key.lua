@@ -26,9 +26,6 @@ return {
       { "<leader>c",  "<cmd>lua require('mini.bufremove').delete(0, false)<cr>",                  desc = "Close Buffer" },
       { "<S-l>",      ":BufferLineCycleNext<CR>" },
       { "<S-h>",      ":BufferLineCyclePrev<CR>" },
-      { "y",          "\"+y",                                                                     mode = { "n", "v" } },
-      { "p",          "\"+p",                                                                     mode = { "n", "v" } },
-      { "d",          "\"+d",                                                                     mode = { "n", "v" } },
       -- Move line/block up/down (VSCode style)
       { "<A-j>",      "<Esc>:m .+1<CR>==gi",                                                      desc = "Move line down",               mode = "i" },
       { "<A-k>",      "<Esc>:m .-2<CR>==gi",                                                      desc = "Move line up",                 mode = "i" },
