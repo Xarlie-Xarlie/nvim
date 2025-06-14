@@ -88,8 +88,22 @@ return {
     vim.api.nvim_create_autocmd("BufEnter", {
       nested = true,
       callback = function()
-        if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+        local nvim_tree = require("nvim-tree.api")
+        local utils = require("nvim-tree.utils")
+        local bufname = vim.api.nvim_buf_get_name(0)
+
+        if bufname == "" or vim.bo.filetype == "alpha" then
+          return
+        end
+
+        if #vim.api.nvim_list_wins() == 1 and utils.is_nvim_tree_buf() then
           vim.cmd "quit"
+          return
+        end
+
+        local is_tree_visible = nvim_tree.tree.is_visible()
+        if is_tree_visible then
+          nvim_tree.tree.find_file({ open = true, focus = false })
         end
       end
     })

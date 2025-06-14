@@ -133,8 +133,8 @@ return {
       { "<leader>zt", "<cmd>CopilotChatTests<cr>",                                                desc = "Generate Tests",               mode = "v" },
       { "<leader>zm", "<cmd>CopilotChatCommit<cr>",                                               desc = "Generate Commit Message" },
       { "<leader>zn", "<cmd>CopilotChatRename<cr>",                                               desc = "Rename the variable",          mode = "v" },
-      { "<leader>zs", "<cmd>CopilotChatSave ",                                                    desc = "Save the history" },
-      { "<leader>zl", "<cmd>CopilotChatLoad ",                                                    desc = "Load the history" },
+      { "<leader>zs", ":CopilotChatSave ",                                                    desc = "Save the history" },
+      { "<leader>zl", ":CopilotChatLoad ",                                                    desc = "Load the history" },
       { "<leader>zp", "<cmd>lua CustomGeneratePullRequest()<CR>",                                 desc = "Generate Pull Request" },
     })
   end
