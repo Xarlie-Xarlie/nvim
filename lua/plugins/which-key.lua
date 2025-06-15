@@ -130,6 +130,9 @@ return {
       { "<leader>zs", ":CopilotChatSave ",                                                desc = "Save the history" },
       { "<leader>zl", ":CopilotChatLoad ",                                                desc = "Load the history" },
       { "<leader>zp", "<cmd>lua CustomGeneratePullRequest()<CR>",                         desc = "Generate Pull Request" },
+      { "<leader>t",  group = "Tests" },
+      { "<leader>tt", "<cmd>lua RunJestInFloatingWindow(vim.fn.expand('%'))<cr>",         desc = "Quick Test" },
+      { "<leader>tf", "<cmd>lua ToggleJestFloatingWindow()<cr>",                          desc = "Toggle test window" },
     })
   end
 }
