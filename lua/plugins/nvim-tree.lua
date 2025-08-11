@@ -63,10 +63,12 @@ return {
       },
       filters = {
         dotfiles = false,
+        git_clean = false,
         custom = { "node_modules", "\\.cache" },
       },
       git = {
         enable = true,
+        ignore = false,
         show_on_dirs = true,
         timeout = 400,
       },
