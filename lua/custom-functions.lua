@@ -70,8 +70,6 @@ function CustomGeneratePullRequest()
 Please generate a pull request description, in pt-br, based on the changes made in the code.
 Use the pull request template structure.
 Summarize the commits to create a comprehensive PR description.
-
-In the section '### Principais pontos a serem revisados', mark everygthing with an x.
 ]]
 
   if commit_count ~= "" then
@@ -140,7 +138,7 @@ function RunJestInFloatingWindow(current_file)
   local cmd
   if file_extension == "exs" then
     cmd = "mix test " .. current_file
-  elseif file_extension == "js" or file_extension == "ts" then
+  elseif file_extension == "js" or file_extension == "ts" or file_extension == "tsx" then
     cmd = "npx jest " .. current_file
   else
     vim.api.nvim_buf_set_lines(jest_buffer, 0, -1, false, { "Unsupported file type: " .. current_file })

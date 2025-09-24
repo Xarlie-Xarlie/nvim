@@ -4,7 +4,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   opts = {
-    flavour = "latte", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     transparent_background = true,
     term_colors = true,
     styles = {

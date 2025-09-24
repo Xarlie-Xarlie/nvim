@@ -13,7 +13,14 @@ return {
           removed = { fg = "#ec5f67" },
         }
       }, 'diagnostics' },
-      lualine_c = { { 'filename', icon = { '' } }, 'filesize' },
+      lualine_c = { { 'filename', icon = { '' } }, 'filesize', {
+          function()
+            local reg = vim.fn.reg_recording()
+            return reg == "" and "" or "󰑋 REC @" .. reg
+          end,
+          cond = function() return vim.fn.reg_recording() ~= "" end
+        }
+      },
       lualine_x = { 'encoding', 'fileformat', 'filetype' },
       lualine_y = { 'progress' },
       lualine_z = { { 'location', icon = { '', align = 'right' } } }
@@ -38,3 +45,4 @@ return {
     extensions = { 'fzf' }
   }
 }
+
