@@ -27,7 +27,7 @@ return {
       Rename = {
         prompt = "Please rename the variable correctly in the given selection based on context",
         selection = function(source)
-          local select = require("CopilotChat.select")
+          local select = require("CopilotChat.selection")
           return select.visual(source)
         end
       },

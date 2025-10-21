@@ -56,12 +56,7 @@ end
 function CustomQuickChat()
   local input = vim.fn.input("Quick Chat: ")
   if input ~= "" then
-    require("CopilotChat").ask(input, {
-      selection = require("CopilotChat.select").buffer
-    })
-  end
-end
-
+    require("CopilotChat").ask(input, { sticky = { "#buffer" } })
   end
 end
 
