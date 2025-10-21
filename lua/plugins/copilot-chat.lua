@@ -30,7 +30,16 @@ return {
           local select = require("CopilotChat.select")
           return select.visual(source)
         end
-      }
+      },
+      PullRequestTemplate = {
+        prompt = [[
+          Please generate a pull request description, in pt-br, based on the changes made in the code.
+          Use the pull request template structure.
+          Summarize the commits to create a comprehensive PR description.
+        ]],
+        mapping = '<leader>zp',
+        sticky = { "#gitdiff:main", "#file:.github/PULL_REQUEST_TEMPLATE.md" },
+      },
     }
   },
   init = function()
