@@ -52,7 +52,7 @@ return {
       { "<C-q>",      "<cmd>lua QuickFixToggle()<cr>",                                    desc = "Toggle QuickFix" },
       -- Search
       { "<leader>s",  group = "Search" },
-      { "<leader>sf", "<cmd>Telescope find_files<cr>",                                    desc = "Find files" },
+      { "<leader>sf", "<cmd>Telescope find_files layout_strategy=vertical<cr>",           desc = "Find files" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>",                                       desc = "Keymaps", },
       { "<leader>sR", "<cmd>Telescope registers<cr>",                                     desc = "Registers", },
       { "<leader>st", "<cmd>Telescope live_grep<cr>",                                     desc = "Text", },
