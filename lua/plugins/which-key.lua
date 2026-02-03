@@ -133,6 +133,17 @@ return {
       { "<leader>t",  group = "Tests" },
       { "<leader>tt", "<cmd>lua RunJestInFloatingWindow(vim.fn.expand('%'))<cr>",         desc = "Quick Test" },
       { "<leader>tf", "<cmd>lua ToggleJestFloatingWindow()<cr>",                          desc = "Toggle test window" },
+      -- Debug (DAP)
+      { "<leader>d",  group = "Debug" },
+      { "<leader>du", "<cmd>lua require('dapui').toggle({reset = true})<cr>",             desc = "Toggle UI (Reset)" },
+      { "<leader>di", "<cmd>DapStepInto<cr>",                                             desc = "Step Into" },
+      { "<leader>do", "<cmd>DapStepOut<cr>",                                              desc = "Step Out" },
+      { "<leader>df", "<cmd>DapStepOver<cr>",                                             desc = "Step Over" },
+      { "<leader>dc", "<cmd>DapContinue<cr>",                                             desc = "Continue" },
+      { "<leader>dv", "<cmd>lua require('nvim-dap-virtual-text').toggle()<cr>",           desc = "Toggle Virtual Text" },
+      { "<leader>dt", "<cmd>lua require('dapui').eval(nil, { enter = true })<cr>",        desc = "Eval under cursor" },
+      { "<leader>db", "<cmd>DapToggleBreakpoint<cr>",                                     desc = "Toggle Breakpoint" },
+      { "<leader>de", "<cmd>DapClearBreakpoints<cr>",                                     desc = "Clear Breakpoints" },
     })
   end
 }
