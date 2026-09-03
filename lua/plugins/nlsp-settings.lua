@@ -41,5 +41,10 @@ return {
     require('lspconfig').ts_ls.setup({ capabilities = capabilities })
     require('lspconfig').lua_ls.setup({ capabilities = capabilities })
     require('lspconfig').elixirls.setup({ capabilities = capabilities })
+    require('lspconfig').postgres_lsp.setup({
+      cmd = { 'postgres-language-server' },
+      filetypes = { 'sql' },
+      capabilities = capabilities,
+    })
   end
 }

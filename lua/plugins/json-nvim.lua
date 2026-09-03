@@ -1,0 +1,1 @@
+return { "VPavliashvili/json-nvim" }

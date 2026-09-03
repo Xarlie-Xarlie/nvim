@@ -115,21 +115,7 @@ return {
       { "<C-1>",      "<cmd>1ToggleTerm size=30 direction=horizontal<cr>",                desc = "Horizontal Terminal" },
       { "<C-2>",      "<cmd>2ToggleTerm size=120 direction=vertical<cr>",                 desc = "Vertical Terminal" },
       { "<C-3>",      "<cmd>3ToggleTerm direction=float<cr>",                             desc = "Float Terminal" },
-      -- CopilotChat
-      { "<leader>z",  group = "CopilotChat" },
-      { "<leader>zc", "<cmd>CopilotChatToggle<cr>",                                       desc = "Chat with Copilot" },
-      { "<leader>zq", "<cmd>lua CustomQuickChat()<cr>",                                   desc = "Quick Chat with Copilot" },
-      { "<leader>ze", "<cmd>CopilotChatExplain<cr>",                                      desc = "Explain Code",                 mode = "v" },
-      { "<leader>zr", "<cmd>CopilotChatReview<cr>",                                       desc = "Review Code",                  mode = "v" },
-      { "<leader>zf", "<cmd>CopilotChatFix<cr>",                                          desc = "Fix Code Issues",              mode = "v" },
-      { "<leader>zo", "<cmd>CopilotChatOptimize<cr>",                                     desc = "Optimize Code",                mode = "v" },
-      { "<leader>zd", "<cmd>CopilotChatDocs<cr>",                                         desc = "Generate Docs",                mode = "v" },
-      { "<leader>zt", "<cmd>CopilotChatTests<cr>",                                        desc = "Generate Tests",               mode = "v" },
-      { "<leader>zm", "<cmd>CopilotChatCommit<cr>",                                       desc = "Generate Commit Message" },
-      { "<leader>zn", "<cmd>CopilotChatRename<cr>",                                       desc = "Rename the variable",          mode = "v" },
-      { "<leader>zs", ":CopilotChatSave ",                                                desc = "Save the history" },
-      { "<leader>zl", ":CopilotChatLoad ",                                                desc = "Load the history" },
-      { "<leader>zp", "<cmd>CopilotChatPullRequestTemplate<cr>",                          desc = "Generate Pull Request" },
+      -- Tests
       { "<leader>t",  group = "Tests" },
       { "<leader>tt", "<cmd>lua RunJestInFloatingWindow(vim.fn.expand('%'))<cr>",         desc = "Quick Test" },
       { "<leader>tf", "<cmd>lua ToggleJestFloatingWindow()<cr>",                          desc = "Toggle test window" },
@@ -144,6 +130,12 @@ return {
       { "<leader>dt", "<cmd>lua require('dapui').eval(nil, { enter = true })<cr>",        desc = "Eval under cursor" },
       { "<leader>db", "<cmd>DapToggleBreakpoint<cr>",                                     desc = "Toggle Breakpoint" },
       { "<leader>de", "<cmd>DapClearBreakpoints<cr>",                                     desc = "Clear Breakpoints" },
+      -- JSON (Tooling)
+      { "<leader>j",  group = "JSON" },
+      { "<leader>jf", "<cmd>JsonFormatFile<cr>",                                          desc = "Format File" },
+      { "<leader>je", "<cmd>JsonEscapeFile<cr>",                                          desc = "Escape File" },
+      { "<leader>js", "<cmd>JsonFormatSelection<cr>",                                     desc = "Format Selection" },
+      { "<leader>ju", "<cmd>JsonUnescapeFile<cr>",                                        desc = "Unescape File" },
     })
   end
 }
